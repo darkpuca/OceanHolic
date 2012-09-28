@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A61B6261615DF6900134571 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A61B6251615DF6900134571 /* icon.png */; };
+		1A61B62A1615DF9400134571 /* OHServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6291615DF9400134571 /* OHServerManager.m */; };
+		1A61B64D1615EC2B00134571 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6461615EC2B00134571 /* TBXML+Compression.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1A61B64E1615EC2B00134571 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6471615EC2B00134571 /* TBXML+HTTP.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1A61B64F1615EC2B00134571 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6481615EC2B00134571 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1AA16B731615D08F00BA3148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B721615D08F00BA3148 /* UIKit.framework */; };
 		1AA16B751615D08F00BA3148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B741615D08F00BA3148 /* Foundation.framework */; };
 		1AA16B771615D08F00BA3148 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B761615D08F00BA3148 /* CoreGraphics.framework */; };
@@ -32,6 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A61B6251615DF6900134571 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1A61B6281615DF9400134571 /* OHServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHServerManager.h; sourceTree = "<group>"; };
+		1A61B6291615DF9400134571 /* OHServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHServerManager.m; sourceTree = "<group>"; };
+		1A61B6461615EC2B00134571 /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+Compression.m"; sourceTree = "<group>"; };
+		1A61B6471615EC2B00134571 /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+HTTP.m"; sourceTree = "<group>"; };
+		1A61B6481615EC2B00134571 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		1A61B64A1615EC2B00134571 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
+		1A61B64B1615EC2B00134571 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
+		1A61B64C1615EC2B00134571 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
 		1AA16B6E1615D08F00BA3148 /* OceanHolic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanHolic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA16B721615D08F00BA3148 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AA16B741615D08F00BA3148 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +107,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A61B6441615EC2B00134571 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				1A61B6451615EC2B00134571 /* TBXML-Code */,
+				1A61B6491615EC2B00134571 /* TBXML-Headers */,
+			);
+			name = TBXML;
+			path = Submodules/TBXML;
+			sourceTree = "<group>";
+		};
+		1A61B6451615EC2B00134571 /* TBXML-Code */ = {
+			isa = PBXGroup;
+			children = (
+				1A61B6461615EC2B00134571 /* TBXML+Compression.m */,
+				1A61B6471615EC2B00134571 /* TBXML+HTTP.m */,
+				1A61B6481615EC2B00134571 /* TBXML.m */,
+			);
+			path = "TBXML-Code";
+			sourceTree = "<group>";
+		};
+		1A61B6491615EC2B00134571 /* TBXML-Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1A61B64A1615EC2B00134571 /* TBXML+Compression.h */,
+				1A61B64B1615EC2B00134571 /* TBXML+HTTP.h */,
+				1A61B64C1615EC2B00134571 /* TBXML.h */,
+			);
+			path = "TBXML-Headers";
+			sourceTree = "<group>";
+		};
 		1AA16B631615D08F00BA3148 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +175,8 @@
 				1AA16C1A1615D6EF00BA3148 /* Submodules */,
 				1AA16B811615D08F00BA3148 /* AppDelegate.h */,
 				1AA16B821615D08F00BA3148 /* AppDelegate.m */,
+				1A61B6281615DF9400134571 /* OHServerManager.h */,
+				1A61B6291615DF9400134571 /* OHServerManager.m */,
 				1AA16B9D1615D18100BA3148 /* ReservationViewController.h */,
 				1AA16B9E1615D18100BA3148 /* ReservationViewController.m */,
 				1AA16B9F1615D18100BA3148 /* ReservationViewController.xib */,
@@ -144,6 +190,7 @@
 			children = (
 				1AA16B7A1615D08F00BA3148 /* OceanHolic-Info.plist */,
 				1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */,
+				1A61B6251615DF6900134571 /* icon.png */,
 				1AA16B7E1615D08F00BA3148 /* main.m */,
 				1AA16B801615D08F00BA3148 /* OceanHolic-Prefix.pch */,
 			);
@@ -181,6 +228,7 @@
 		1AA16C1A1615D6EF00BA3148 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				1A61B6441615EC2B00134571 /* TBXML */,
 				1AA16C341615D8D000BA3148 /* Reachability */,
 				1AA16BA21615D6EA00BA3148 /* asi-http-request */,
 			);
@@ -250,6 +298,7 @@
 			files = (
 				1AA16B7D1615D08F00BA3148 /* InfoPlist.strings in Resources */,
 				1AA16BA11615D18100BA3148 /* ReservationViewController.xib in Resources */,
+				1A61B6261615DF6900134571 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +321,10 @@
 				1AA16BFB1615D6EA00BA3148 /* ASIInputStream.m in Sources */,
 				1AA16BFC1615D6EA00BA3148 /* ASINetworkQueue.m in Sources */,
 				1AA16C371615D8D000BA3148 /* Reachability.m in Sources */,
+				1A61B62A1615DF9400134571 /* OHServerManager.m in Sources */,
+				1A61B64D1615EC2B00134571 /* TBXML+Compression.m in Sources */,
+				1A61B64E1615EC2B00134571 /* TBXML+HTTP.m in Sources */,
+				1A61B64F1615EC2B00134571 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +366,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "OceanHolic/Submodules/**";
 			};
 			name = Debug;
 		};
@@ -334,6 +388,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "OceanHolic/Submodules/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -343,9 +398,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OceanHolic/OceanHolic-Prefix.pch";
-				HEADER_SEARCH_PATHS = "Submodules/**";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "OceanHolic/OceanHolic-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "OceanHolic/Submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -355,9 +411,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OceanHolic/OceanHolic-Prefix.pch";
-				HEADER_SEARCH_PATHS = "Submodules/**";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "OceanHolic/OceanHolic-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "OceanHolic/Submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -381,6 +438,7 @@
 				1AA16B9C1615D09000BA3148 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,9 @@
 
 @implementation ReservationViewController
 
+@synthesize listButton = _listButton;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,19 +29,59 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    [_listButton setEnabled:NO];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+    _listButton = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
+#pragma mark - Functions
+
+- (IBAction)loginButtonPressed:(id)sender
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:@"darkpuca" forKey:@"userId"];
+    [params setValue:@"d944155" forKey:@"password"];
+    
+    [[OHServerManager sharedManager] setDelegate:self];
+    [[OHServerManager sharedManager] login:params];
+}
+
+- (IBAction)listButtonPressed:(id)sender
+{
+    
+    
+}
+
+
+
+
+#pragma mark - OHServerManagerDelegate methods
+
+- (void)serverRequestDidFinished:(NSDictionary *)resultDict
+{
+    NSLog(@"server request result: %@", resultDict);
+    
+    NSInteger errorCode = [[resultDict valueForKey:@"error"] intValue];
+    
+    if (0 == errorCode)
+    {
+        [_listButton setEnabled:YES];
+    }
+}
+
+
+
 
 @end
