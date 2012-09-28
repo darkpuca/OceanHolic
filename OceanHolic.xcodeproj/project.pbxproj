@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AA16B731615D08F00BA3148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B721615D08F00BA3148 /* UIKit.framework */; };
+		1AA16B751615D08F00BA3148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B741615D08F00BA3148 /* Foundation.framework */; };
+		1AA16B771615D08F00BA3148 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B761615D08F00BA3148 /* CoreGraphics.framework */; };
+		1AA16B7D1615D08F00BA3148 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */; };
+		1AA16B7F1615D08F00BA3148 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B7E1615D08F00BA3148 /* main.m */; };
+		1AA16B831615D08F00BA3148 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B821615D08F00BA3148 /* AppDelegate.m */; };
+		1AA16B861615D08F00BA3148 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B851615D08F00BA3148 /* FirstViewController.m */; };
+		1AA16B881615D09000BA3148 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B871615D09000BA3148 /* first.png */; };
+		1AA16B8A1615D09000BA3148 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B891615D09000BA3148 /* first@2x.png */; };
+		1AA16B8D1615D09000BA3148 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B8C1615D09000BA3148 /* SecondViewController.m */; };
+		1AA16B8F1615D09000BA3148 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B8E1615D09000BA3148 /* second.png */; };
+		1AA16B911615D09000BA3148 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B901615D09000BA3148 /* second@2x.png */; };
+		1AA16B941615D09000BA3148 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B921615D09000BA3148 /* FirstViewController.xib */; };
+		1AA16B971615D09000BA3148 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B951615D09000BA3148 /* SecondViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AA16B6E1615D08F00BA3148 /* OceanHolic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanHolic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA16B721615D08F00BA3148 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1AA16B741615D08F00BA3148 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1AA16B761615D08F00BA3148 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1AA16B7A1615D08F00BA3148 /* OceanHolic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OceanHolic-Info.plist"; sourceTree = "<group>"; };
+		1AA16B7C1615D08F00BA3148 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AA16B7E1615D08F00BA3148 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1AA16B801615D08F00BA3148 /* OceanHolic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OceanHolic-Prefix.pch"; sourceTree = "<group>"; };
+		1AA16B811615D08F00BA3148 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1AA16B821615D08F00BA3148 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1AA16B841615D08F00BA3148 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		1AA16B851615D08F00BA3148 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1AA16B871615D09000BA3148 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		1AA16B891615D09000BA3148 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		1AA16B8B1615D09000BA3148 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		1AA16B8C1615D09000BA3148 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1AA16B8E1615D09000BA3148 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		1AA16B901615D09000BA3148 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		1AA16B931615D09000BA3148 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
+		1AA16B961615D09000BA3148 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AA16B6B1615D08F00BA3148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA16B731615D08F00BA3148 /* UIKit.framework in Frameworks */,
+				1AA16B751615D08F00BA3148 /* Foundation.framework in Frameworks */,
+				1AA16B771615D08F00BA3148 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AA16B631615D08F00BA3148 = {
+			isa = PBXGroup;
+			children = (
+				1AA16B781615D08F00BA3148 /* OceanHolic */,
+				1AA16B711615D08F00BA3148 /* Frameworks */,
+				1AA16B6F1615D08F00BA3148 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AA16B6F1615D08F00BA3148 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AA16B6E1615D08F00BA3148 /* OceanHolic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AA16B711615D08F00BA3148 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AA16B721615D08F00BA3148 /* UIKit.framework */,
+				1AA16B741615D08F00BA3148 /* Foundation.framework */,
+				1AA16B761615D08F00BA3148 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AA16B781615D08F00BA3148 /* OceanHolic */ = {
+			isa = PBXGroup;
+			children = (
+				1AA16B811615D08F00BA3148 /* AppDelegate.h */,
+				1AA16B821615D08F00BA3148 /* AppDelegate.m */,
+				1AA16B841615D08F00BA3148 /* FirstViewController.h */,
+				1AA16B851615D08F00BA3148 /* FirstViewController.m */,
+				1AA16B871615D09000BA3148 /* first.png */,
+				1AA16B891615D09000BA3148 /* first@2x.png */,
+				1AA16B8B1615D09000BA3148 /* SecondViewController.h */,
+				1AA16B8C1615D09000BA3148 /* SecondViewController.m */,
+				1AA16B8E1615D09000BA3148 /* second.png */,
+				1AA16B901615D09000BA3148 /* second@2x.png */,
+				1AA16B921615D09000BA3148 /* FirstViewController.xib */,
+				1AA16B951615D09000BA3148 /* SecondViewController.xib */,
+				1AA16B791615D08F00BA3148 /* Supporting Files */,
+			);
+			path = OceanHolic;
+			sourceTree = "<group>";
+		};
+		1AA16B791615D08F00BA3148 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AA16B7A1615D08F00BA3148 /* OceanHolic-Info.plist */,
+				1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */,
+				1AA16B7E1615D08F00BA3148 /* main.m */,
+				1AA16B801615D08F00BA3148 /* OceanHolic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AA16B6D1615D08F00BA3148 /* OceanHolic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AA16B9A1615D09000BA3148 /* Build configuration list for PBXNativeTarget "OceanHolic" */;
+			buildPhases = (
+				1AA16B6A1615D08F00BA3148 /* Sources */,
+				1AA16B6B1615D08F00BA3148 /* Frameworks */,
+				1AA16B6C1615D08F00BA3148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OceanHolic;
+			productName = OceanHolic;
+			productReference = 1AA16B6E1615D08F00BA3148 /* OceanHolic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AA16B651615D08F00BA3148 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = darkpuca;
+			};
+			buildConfigurationList = 1AA16B681615D08F00BA3148 /* Build configuration list for PBXProject "OceanHolic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1AA16B631615D08F00BA3148;
+			productRefGroup = 1AA16B6F1615D08F00BA3148 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AA16B6D1615D08F00BA3148 /* OceanHolic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AA16B6C1615D08F00BA3148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA16B7D1615D08F00BA3148 /* InfoPlist.strings in Resources */,
+				1AA16B881615D09000BA3148 /* first.png in Resources */,
+				1AA16B8A1615D09000BA3148 /* first@2x.png in Resources */,
+				1AA16B8F1615D09000BA3148 /* second.png in Resources */,
+				1AA16B911615D09000BA3148 /* second@2x.png in Resources */,
+				1AA16B941615D09000BA3148 /* FirstViewController.xib in Resources */,
+				1AA16B971615D09000BA3148 /* SecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AA16B6A1615D08F00BA3148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA16B7F1615D08F00BA3148 /* main.m in Sources */,
+				1AA16B831615D08F00BA3148 /* AppDelegate.m in Sources */,
+				1AA16B861615D08F00BA3148 /* FirstViewController.m in Sources */,
+				1AA16B8D1615D09000BA3148 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AA16B7C1615D08F00BA3148 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1AA16B921615D09000BA3148 /* FirstViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AA16B931615D09000BA3148 /* en */,
+			);
+			name = FirstViewController.xib;
+			sourceTree = "<group>";
+		};
+		1AA16B951615D09000BA3148 /* SecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AA16B961615D09000BA3148 /* en */,
+			);
+			name = SecondViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AA16B981615D09000BA3148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1AA16B991615D09000BA3148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AA16B9B1615D09000BA3148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OceanHolic/OceanHolic-Prefix.pch";
+				INFOPLIST_FILE = "OceanHolic/OceanHolic-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1AA16B9C1615D09000BA3148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OceanHolic/OceanHolic-Prefix.pch";
+				INFOPLIST_FILE = "OceanHolic/OceanHolic-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AA16B681615D08F00BA3148 /* Build configuration list for PBXProject "OceanHolic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AA16B981615D09000BA3148 /* Debug */,
+				1AA16B991615D09000BA3148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AA16B9A1615D09000BA3148 /* Build configuration list for PBXNativeTarget "OceanHolic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AA16B9B1615D09000BA3148 /* Debug */,
+				1AA16B9C1615D09000BA3148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AA16B651615D08F00BA3148 /* Project object */;
+}
