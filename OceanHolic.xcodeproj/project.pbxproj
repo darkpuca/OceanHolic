@@ -13,14 +13,8 @@
 		1AA16B7D1615D08F00BA3148 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */; };
 		1AA16B7F1615D08F00BA3148 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B7E1615D08F00BA3148 /* main.m */; };
 		1AA16B831615D08F00BA3148 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B821615D08F00BA3148 /* AppDelegate.m */; };
-		1AA16B861615D08F00BA3148 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B851615D08F00BA3148 /* FirstViewController.m */; };
-		1AA16B881615D09000BA3148 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B871615D09000BA3148 /* first.png */; };
-		1AA16B8A1615D09000BA3148 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B891615D09000BA3148 /* first@2x.png */; };
-		1AA16B8D1615D09000BA3148 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B8C1615D09000BA3148 /* SecondViewController.m */; };
-		1AA16B8F1615D09000BA3148 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B8E1615D09000BA3148 /* second.png */; };
-		1AA16B911615D09000BA3148 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B901615D09000BA3148 /* second@2x.png */; };
-		1AA16B941615D09000BA3148 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B921615D09000BA3148 /* FirstViewController.xib */; };
-		1AA16B971615D09000BA3148 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B951615D09000BA3148 /* SecondViewController.xib */; };
+		1AA16BA01615D18100BA3148 /* ReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16B9E1615D18100BA3148 /* ReservationViewController.m */; };
+		1AA16BA11615D18100BA3148 /* ReservationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA16B9F1615D18100BA3148 /* ReservationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,16 +28,9 @@
 		1AA16B801615D08F00BA3148 /* OceanHolic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OceanHolic-Prefix.pch"; sourceTree = "<group>"; };
 		1AA16B811615D08F00BA3148 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AA16B821615D08F00BA3148 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1AA16B841615D08F00BA3148 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		1AA16B851615D08F00BA3148 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		1AA16B871615D09000BA3148 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		1AA16B891615D09000BA3148 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		1AA16B8B1615D09000BA3148 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		1AA16B8C1615D09000BA3148 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		1AA16B8E1615D09000BA3148 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		1AA16B901615D09000BA3148 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		1AA16B931615D09000BA3148 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		1AA16B961615D09000BA3148 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		1AA16B9D1615D18100BA3148 /* ReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationViewController.h; sourceTree = "<group>"; };
+		1AA16B9E1615D18100BA3148 /* ReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationViewController.m; sourceTree = "<group>"; };
+		1AA16B9F1615D18100BA3148 /* ReservationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,16 +79,9 @@
 			children = (
 				1AA16B811615D08F00BA3148 /* AppDelegate.h */,
 				1AA16B821615D08F00BA3148 /* AppDelegate.m */,
-				1AA16B841615D08F00BA3148 /* FirstViewController.h */,
-				1AA16B851615D08F00BA3148 /* FirstViewController.m */,
-				1AA16B871615D09000BA3148 /* first.png */,
-				1AA16B891615D09000BA3148 /* first@2x.png */,
-				1AA16B8B1615D09000BA3148 /* SecondViewController.h */,
-				1AA16B8C1615D09000BA3148 /* SecondViewController.m */,
-				1AA16B8E1615D09000BA3148 /* second.png */,
-				1AA16B901615D09000BA3148 /* second@2x.png */,
-				1AA16B921615D09000BA3148 /* FirstViewController.xib */,
-				1AA16B951615D09000BA3148 /* SecondViewController.xib */,
+				1AA16B9D1615D18100BA3148 /* ReservationViewController.h */,
+				1AA16B9E1615D18100BA3148 /* ReservationViewController.m */,
+				1AA16B9F1615D18100BA3148 /* ReservationViewController.xib */,
 				1AA16B791615D08F00BA3148 /* Supporting Files */,
 			);
 			path = OceanHolic;
@@ -170,12 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA16B7D1615D08F00BA3148 /* InfoPlist.strings in Resources */,
-				1AA16B881615D09000BA3148 /* first.png in Resources */,
-				1AA16B8A1615D09000BA3148 /* first@2x.png in Resources */,
-				1AA16B8F1615D09000BA3148 /* second.png in Resources */,
-				1AA16B911615D09000BA3148 /* second@2x.png in Resources */,
-				1AA16B941615D09000BA3148 /* FirstViewController.xib in Resources */,
-				1AA16B971615D09000BA3148 /* SecondViewController.xib in Resources */,
+				1AA16BA11615D18100BA3148 /* ReservationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,8 +163,7 @@
 			files = (
 				1AA16B7F1615D08F00BA3148 /* main.m in Sources */,
 				1AA16B831615D08F00BA3148 /* AppDelegate.m in Sources */,
-				1AA16B861615D08F00BA3148 /* FirstViewController.m in Sources */,
-				1AA16B8D1615D09000BA3148 /* SecondViewController.m in Sources */,
+				1AA16BA01615D18100BA3148 /* ReservationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,22 +176,6 @@
 				1AA16B7C1615D08F00BA3148 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1AA16B921615D09000BA3148 /* FirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AA16B931615D09000BA3148 /* en */,
-			);
-			name = FirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		1AA16B951615D09000BA3148 /* SecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AA16B961615D09000BA3148 /* en */,
-			);
-			name = SecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

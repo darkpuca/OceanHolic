@@ -1,44 +1,44 @@
 //
-//  FirstViewController.m
+//  ReservationViewController.m
 //  OceanHolic
 //
 //  Created by darkpuca on 9/28/12.
 //  Copyright (c) 2012 darkpuca. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ReservationViewController.h"
 
-@interface FirstViewController ()
+@interface ReservationViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation ReservationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        // Custom initialization
     }
     return self;
 }
-							
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end

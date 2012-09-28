@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ReservationViewController.h
 //  OceanHolic
 //
 //  Created by darkpuca on 9/28/12.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface ReservationViewController : UIViewController
+
+
+- (IBAction)loginButtonPressed:(id)sender;
 
 @end
