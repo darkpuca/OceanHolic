@@ -8,21 +8,24 @@
 
 #import "ReservationViewController.h"
 
+//#import <SDWebImage/UIImageView+WebCache.h>
+
+
 @interface ReservationViewController ()
 
 @end
 
 @implementation ReservationViewController
 
-@synthesize listButton = _listButton;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
     }
+    
     return self;
 }
 
@@ -30,14 +33,12 @@
 {
     [super viewDidLoad];
 
-    [_listButton setEnabled:NO];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
 
-    _listButton = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -60,7 +61,8 @@
 
 - (IBAction)listButtonPressed:(id)sender
 {
-    
+    [[OHServerManager sharedManager] setDelegate:self];
+    [[OHServerManager sharedManager] reservationItems];
     
 }
 
@@ -77,7 +79,7 @@
     
     if (0 == errorCode)
     {
-        [_listButton setEnabled:YES];
+
     }
 }
 

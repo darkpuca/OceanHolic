@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ReservationViewController.h"
+#import "MainViewController.h"
 
 
 @implementation AppDelegate
@@ -17,10 +17,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *reservationViewController = [[ReservationViewController alloc] initWithNibName:@"ReservationViewController" bundle:nil];
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[reservationViewController];
-    self.window.rootViewController = self.tabBarController;
+    MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    _naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
+
+    [self.window addSubview:_naviController.view];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -52,18 +53,5 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end

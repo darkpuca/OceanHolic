@@ -10,11 +10,7 @@
 
 #import "OHServerManager.h"
 
-@interface ReservationViewController : UIViewController <OHServerManagerDelegate>
+@interface ReservationViewController : UITableViewController <OHServerManagerDelegate>
 
-@property (nonatomic, strong) IBOutlet UIButton *listButton;
-
-- (IBAction)loginButtonPressed:(id)sender;
-- (IBAction)listButtonPressed:(id)sender;
 
 @end

@@ -35,6 +35,7 @@ enum OHServerRequestType
 {
     NSUInteger _requestType;
     ASIHTTPRequest *_currentRequest;
+    NSString *_loggedInUser;
     
 }
 
@@ -42,6 +43,10 @@ enum OHServerRequestType
 
 
 + (OHServerManager *)sharedManager;
++ (BOOL)isLogin;
+
+
+- (NSString *)currentUserID;
 
 
 - (void)request:(NSString *)URI method:(NSString *)method;
@@ -50,6 +55,7 @@ enum OHServerRequestType
 
 - (void)login:(NSDictionary *)params;
 - (void)reservationItems;
+
 
 
 @end
