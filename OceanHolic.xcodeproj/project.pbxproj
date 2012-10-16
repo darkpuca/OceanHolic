@@ -17,15 +17,22 @@
 		1A31BA7E1627A81F0001C8BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A31BA7D1627A81F0001C8BA /* MapKit.framework */; };
 		1A31BA821627AD140001C8BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A31BA801627AD140001C8BA /* MainViewController.m */; };
 		1A31BA831627AD140001C8BA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A31BA811627AD140001C8BA /* MainViewController.xib */; };
+		1A4588F6162D26B3009C2866 /* ReservationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */; };
+		1A4588F7162D26B3009C2866 /* ReservationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */; };
 		1A52D6881627BEC10054488C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A52D6821627BEC10054488C /* SVProgressHUD.bundle */; };
 		1A52D6891627BEC10054488C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A52D6841627BEC10054488C /* SVProgressHUD.m */; };
 		1A52D68A1627BEC10054488C /* SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A52D6871627BEC10054488C /* SVPullToRefresh.m */; };
 		1A52D68C1627BF5B0054488C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A52D68B1627BF5B0054488C /* QuartzCore.framework */; };
+		1A52D68F1627E66F0054488C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A52D68E1627E66F0054488C /* LoginViewController.m */; };
+		1A52D6BA1627EE410054488C /* QuickRootBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A52D6B91627EE410054488C /* QuickRootBuilder.m */; };
+		1A52D6D01627F6F70054488C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A52D6CF1627F6F70054488C /* logo.png */; };
+		1A52D6D71627FE250054488C /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A52D6D51627FE250054488C /* main.png */; };
 		1A61B6261615DF6900134571 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A61B6251615DF6900134571 /* icon.png */; };
 		1A61B62A1615DF9400134571 /* OHServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6291615DF9400134571 /* OHServerManager.m */; };
 		1A61B64D1615EC2B00134571 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6461615EC2B00134571 /* TBXML+Compression.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1A61B64E1615EC2B00134571 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6471615EC2B00134571 /* TBXML+HTTP.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1A61B64F1615EC2B00134571 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61B6481615EC2B00134571 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1A62EEFE1628054700585912 /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A62EEFD1628054700585912 /* pattern.png */; };
 		1AA16B731615D08F00BA3148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B721615D08F00BA3148 /* UIKit.framework */; };
 		1AA16B751615D08F00BA3148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B741615D08F00BA3148 /* Foundation.framework */; };
 		1AA16B771615D08F00BA3148 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16B761615D08F00BA3148 /* CoreGraphics.framework */; };
@@ -161,12 +168,21 @@
 		1A31BA7F1627AD140001C8BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		1A31BA801627AD140001C8BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		1A31BA811627AD140001C8BA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1A4588F3162D26B3009C2866 /* ReservationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationDetailViewController.h; sourceTree = "<group>"; };
+		1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationDetailViewController.m; sourceTree = "<group>"; };
+		1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationDetailViewController.xib; sourceTree = "<group>"; };
 		1A52D6821627BEC10054488C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1A52D6831627BEC10054488C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		1A52D6841627BEC10054488C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		1A52D6861627BEC10054488C /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		1A52D6871627BEC10054488C /* SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPullToRefresh.m; sourceTree = "<group>"; };
 		1A52D68B1627BF5B0054488C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1A52D68D1627E66F0054488C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1A52D68E1627E66F0054488C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1A52D6B81627EE410054488C /* QuickRootBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickRootBuilder.h; sourceTree = "<group>"; };
+		1A52D6B91627EE410054488C /* QuickRootBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickRootBuilder.m; sourceTree = "<group>"; };
+		1A52D6CF1627F6F70054488C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
+		1A52D6D51627FE250054488C /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main.png; path = Resources/main.png; sourceTree = "<group>"; };
 		1A61B6251615DF6900134571 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1A61B6281615DF9400134571 /* OHServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHServerManager.h; sourceTree = "<group>"; };
 		1A61B6291615DF9400134571 /* OHServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHServerManager.m; sourceTree = "<group>"; };
@@ -176,6 +192,7 @@
 		1A61B64A1615EC2B00134571 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
 		1A61B64B1615EC2B00134571 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
 		1A61B64C1615EC2B00134571 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		1A62EEFD1628054700585912 /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pattern.png; path = Resources/pattern.png; sourceTree = "<group>"; };
 		1AA16B6E1615D08F00BA3148 /* OceanHolic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanHolic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA16B721615D08F00BA3148 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AA16B741615D08F00BA3148 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -302,6 +319,16 @@
 			path = Submodules/SVPullToRefresh;
 			sourceTree = "<group>";
 		};
+		1A52D6CE1627F6E30054488C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A52D6CF1627F6F70054488C /* logo.png */,
+				1A52D6D51627FE250054488C /* main.png */,
+				1A62EEFD1628054700585912 /* pattern.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1A61B6441615EC2B00134571 /* TBXML */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +405,8 @@
 				1AA16C1A1615D6EF00BA3148 /* Submodules */,
 				1AA16B811615D08F00BA3148 /* AppDelegate.h */,
 				1AA16B821615D08F00BA3148 /* AppDelegate.m */,
+				1A52D6B81627EE410054488C /* QuickRootBuilder.h */,
+				1A52D6B91627EE410054488C /* QuickRootBuilder.m */,
 				1A61B6281615DF9400134571 /* OHServerManager.h */,
 				1A61B6291615DF9400134571 /* OHServerManager.m */,
 				1A31BA7F1627AD140001C8BA /* MainViewController.h */,
@@ -385,6 +414,11 @@
 				1A31BA811627AD140001C8BA /* MainViewController.xib */,
 				1AA16B9D1615D18100BA3148 /* ReservationViewController.h */,
 				1AA16B9E1615D18100BA3148 /* ReservationViewController.m */,
+				1A4588F3162D26B3009C2866 /* ReservationDetailViewController.h */,
+				1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */,
+				1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */,
+				1A52D68D1627E66F0054488C /* LoginViewController.h */,
+				1A52D68E1627E66F0054488C /* LoginViewController.m */,
 				1AA16B791615D08F00BA3148 /* Supporting Files */,
 			);
 			path = OceanHolic;
@@ -393,6 +427,7 @@
 		1AA16B791615D08F00BA3148 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A52D6CE1627F6E30054488C /* Resources */,
 				1AA16B7A1615D08F00BA3148 /* OceanHolic-Info.plist */,
 				1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */,
 				1A61B6251615DF6900134571 /* icon.png */,
@@ -616,6 +651,10 @@
 				1A61B6261615DF6900134571 /* icon.png in Resources */,
 				1A31BA831627AD140001C8BA /* MainViewController.xib in Resources */,
 				1A52D6881627BEC10054488C /* SVProgressHUD.bundle in Resources */,
+				1A52D6D01627F6F70054488C /* logo.png in Resources */,
+				1A52D6D71627FE250054488C /* main.png in Resources */,
+				1A62EEFE1628054700585912 /* pattern.png in Resources */,
+				1A4588F7162D26B3009C2866 /* ReservationDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +689,9 @@
 				1A31BA821627AD140001C8BA /* MainViewController.m in Sources */,
 				1A52D6891627BEC10054488C /* SVProgressHUD.m in Sources */,
 				1A52D68A1627BEC10054488C /* SVPullToRefresh.m in Sources */,
+				1A52D68F1627E66F0054488C /* LoginViewController.m in Sources */,
+				1A52D6BA1627EE410054488C /* QuickRootBuilder.m in Sources */,
+				1A4588F6162D26B3009C2866 /* ReservationDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

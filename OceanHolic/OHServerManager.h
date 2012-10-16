@@ -13,6 +13,7 @@ enum OHServerRequestType
 {
     kRequestLogin,
     kRequestReservationItems,
+    kRequestReservationDetail,
 };
 
 
@@ -20,10 +21,10 @@ enum OHServerRequestType
 
 @protocol OHServerManagerDelegate <NSObject>
 
-- (void)serverRequestDidFinished:(NSDictionary *)resultDict;
+- (void)serverRequestDidFinished:(NSDictionary *)resultDict requestType:(NSInteger)requestType;
 
 @optional
-- (void)serverRequestDidFailed:(NSError *)error;
+- (void)serverRequestDidFailed:(NSError *)error requestType:(NSInteger)requestType;
 
 @end
 
@@ -55,6 +56,7 @@ enum OHServerRequestType
 
 - (void)login:(NSDictionary *)params;
 - (void)reservationItems;
+- (void)reservationDetail:(NSString *)uriString;
 
 
 

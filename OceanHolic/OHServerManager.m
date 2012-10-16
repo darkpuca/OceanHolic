@@ -9,6 +9,7 @@
 #import "OHServerManager.h"
 #import "ASIHTTPRequest.h"
 #import "TBXML.h"
+#import "SVProgressHUD.h"
 
 #define OHServerURL     @"http://www.oceanholic.com"
 
@@ -16,6 +17,7 @@
 @interface OHServerManager()
 
 - (void)parseReservationItems:(NSString *)htmlString withContainer:(NSMutableArray *)items;
+- (void)parseReservationDetail:(NSString *)htmlString withContainer:(NSMutableDictionary *)itemDict;
 
 @end
 
@@ -77,10 +79,33 @@ static BOOL _isLogin;
         TBXMLElement *trElmt = [TBXML childElementNamed:@"tr" parentElement:tbodyXml.rootXMLElement];
         if (trElmt)
         {
-            NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
-
+            // add notice group
+            NSMutableDictionary *noticeDict = [[NSMutableDictionary alloc] init];
+            [noticeDict setValue:@"notice" forKey:@"type"];
+            NSMutableArray *noticeItems = [[NSMutableArray alloc] init];
+            [noticeDict setValue:noticeItems forKey:@"items"];
+            [items addObject:noticeDict];
+            
+            // add content group
+            NSMutableDictionary *reservDict = [[NSMutableDictionary alloc] init];
+            [reservDict setValue:@"reserv" forKey:@"type"];
+            NSMutableArray *reservItems = [[NSMutableArray alloc] init];
+            [reservDict setValue:reservItems forKey:@"items"];
+            [items addObject:reservDict];
+            
+            NSMutableArray *targetArray = nil;
+            
             do
             {
+                NSString *trClass = [TBXML valueOfAttributeNamed:@"class" forElement:trElmt];
+                BOOL isNotice = (1 < [[trClass componentsSeparatedByString:@" "] count]);
+                if (isNotice)
+                    targetArray = [[items objectAtIndex:0] valueForKey:@"items"];
+                else
+                    targetArray = [[items lastObject] valueForKey:@"items"];
+                
+                NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
+
                 TBXMLElement *tdElmt = [TBXML childElementNamed:@"td" parentElement:trElmt];
                 if (tdElmt)
                 {
@@ -106,17 +131,31 @@ static BOOL _isLogin;
                                 [itemDict setValue:uriString forKey:@"uri"];
                                 
                                 TBXMLElement *spanElmt = [TBXML childElementNamed:@"span" parentElement:aElmt];
-                                if (spanElmt) [itemDict setValue:[TBXML textForElement:spanElmt] forKey:@"title"];
+                                if (spanElmt)
+                                    [itemDict setValue:[TBXML textForElement:spanElmt] forKey:@"title"];
+                                else
+                                    [itemDict setValue:[TBXML textForElement:aElmt] forKey:@"title"];
+                                
                             }
                         }
                     } while ((tdElmt = [TBXML nextSiblingNamed:@"td" searchFromElement:tdElmt]));
                 }
             
-                [items addObject:itemDict];
+                NSLog(@"item title: %@", [itemDict valueForKey:@"title"]);
+                [targetArray addObject:itemDict];
             } while ((trElmt = [TBXML nextSiblingNamed:@"tr" searchFromElement:trElmt]));
 
         }
     }
+}
+
+- (void)parseReservationDetail:(NSString *)htmlString withContainer:(NSMutableDictionary *)itemDict
+{
+    if (nil == htmlString || nil == itemDict) return;
+    
+    NSRange range1 = [htmlString rangeOfString:@"<tbody>"];
+    NSRange range2 = [htmlString rangeOfString:@"</tbody>"];
+
 }
 
 
@@ -146,6 +185,8 @@ static BOOL _isLogin;
             [request appendPostData:someData];
         }
     }
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     _currentRequest = request;
     [request startAsynchronous];
@@ -180,8 +221,14 @@ static BOOL _isLogin;
 {
     _requestType = kRequestReservationItems;
     
-    NSString *uriString = @"home/?mid=sub41&search_target=user_id&search_keyword=darkpuca";
+    NSString *uriString = [NSString stringWithFormat:@"home/?mid=sub41&search_target=user_id&search_keyword=%@", _loggedInUser];
     [self request:uriString method:@"GET"];
+}
+
+- (void)reservationDetail:(NSString *)uriString
+{
+    _requestType = kRequestReservationDetail;
+    [self request:uriString method:@"GET"];    
 }
 
 
@@ -190,6 +237,8 @@ static BOOL _isLogin;
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
+    [SVProgressHUD dismiss];
+    
     NSString *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     NSLog(@"responseString: %@\n", responseString);
 //    NSLog(@"request headers: %@\n", request.requestHeaders);
@@ -203,6 +252,12 @@ static BOOL _isLogin;
         [self parseReservationItems:responseString withContainer:items];
         [resultDict setValue:items forKey:@"items"];
     }
+    else if (kRequestReservationDetail == _requestType)
+    {
+        NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
+        [self parseReservationDetail:responseString withContainer:itemDict];
+        [resultDict setValue:itemDict forKey:@"detail"];
+    }
     else
     {
         NSError *xmlError;
@@ -211,7 +266,7 @@ static BOOL _isLogin;
         if (nil == responseXML.rootXMLElement)
         {
             if ([_delegate respondsToSelector:@selector(serverRequestDidFailed:)])
-                [_delegate serverRequestDidFailed:xmlError];
+                [_delegate serverRequestDidFailed:xmlError requestType:_requestType];
             return;
         }
         
@@ -229,16 +284,18 @@ static BOOL _isLogin;
             _loggedInUser = nil;
     }
     
-    if ([_delegate respondsToSelector:@selector(serverRequestDidFinished:)])
-        [_delegate serverRequestDidFinished:resultDict];
+    if ([_delegate respondsToSelector:@selector(serverRequestDidFinished:requestType:)])
+        [_delegate serverRequestDidFinished:resultDict requestType:_requestType];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
+    [SVProgressHUD dismiss];
+    
     NSLog(@"request failed: %@", request.error);
     
-    if ([_delegate respondsToSelector:@selector(serverRequestDidFailed:)])
-        [_delegate serverRequestDidFailed:request.error];
+    if ([_delegate respondsToSelector:@selector(serverRequestDidFailed:requestType:)])
+        [_delegate serverRequestDidFailed:request.error requestType:_requestType];
 }
 
 

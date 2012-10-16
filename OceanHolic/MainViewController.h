@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "OHServerManager.h"
+#import "LoginViewController.h"
 
-@interface MainViewController : UIViewController <OHServerManagerDelegate>
+
+@interface MainViewController : UIViewController <OHServerManagerDelegate, LoginViewDelegate>
 
 
+@property (nonatomic, strong) IBOutlet UIImageView *mainImageView;
 @property (nonatomic, strong) IBOutlet UIButton *reserveButton, *logbookButton, *fishbookButton;
 
 
