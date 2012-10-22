@@ -54,6 +54,13 @@
 		1AA16C3D1615D91A00BA3148 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16C3C1615D91A00BA3148 /* libz.dylib */; };
 		1AA16C3F1615D96A00BA3148 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16C3E1615D96A00BA3148 /* MobileCoreServices.framework */; };
 		1AA16C411615D98900BA3148 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA16C401615D98900BA3148 /* SystemConfiguration.framework */; };
+		1AB3B42E1631315F00911A11 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3B42D1631315F00911A11 /* libxml2.2.dylib */; };
+		1AB3B430163131DA00911A11 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3B42F163131DA00911A11 /* Default-568h@2x.png */; };
+		1AB3B4AC1631409000911A11 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B49F1631409000911A11 /* DDXMLElementAdditions.m */; };
+		1AB3B4AD1631409000911A11 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B4A21631409000911A11 /* NSString+DDXML.m */; };
+		1AB3B4AE1631409000911A11 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B4A51631409000911A11 /* DDXMLDocument.m */; };
+		1AB3B4AF1631409000911A11 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B4A71631409000911A11 /* DDXMLElement.m */; };
+		1AB3B4B01631409000911A11 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B4A91631409000911A11 /* DDXMLNode.m */; };
 		1ABCF1051626DE0C00B8C8C5 /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCF1001626DDE400B8C8C5 /* libSDWebImageARC.a */; };
 		1ABCF1071626DE1C00B8C8C5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCF1061626DE1C00B8C8C5 /* ImageIO.framework */; };
 		1ABCF1201626DFA900B8C8C5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCF11F1626DFA900B8C8C5 /* Security.framework */; };
@@ -232,6 +239,20 @@
 		1AA16C3C1615D91A00BA3148 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1AA16C3E1615D96A00BA3148 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1AA16C401615D98900BA3148 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1AB3B42D1631315F00911A11 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		1AB3B42F163131DA00911A11 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		1AB3B49E1631409000911A11 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		1AB3B49F1631409000911A11 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		1AB3B4A11631409000911A11 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
+		1AB3B4A21631409000911A11 /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
+		1AB3B4A31631409000911A11 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		1AB3B4A41631409000911A11 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		1AB3B4A51631409000911A11 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		1AB3B4A61631409000911A11 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		1AB3B4A71631409000911A11 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		1AB3B4A81631409000911A11 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		1AB3B4A91631409000911A11 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		1AB3B4AB1631409000911A11 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
 		1ABCF0F41626DDE400B8C8C5 /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = Submodules/SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		1ABCF1061626DE1C00B8C8C5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1ABCF11F1626DFA900B8C8C5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -246,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB3B42E1631315F00911A11 /* libxml2.2.dylib in Frameworks */,
 				1A52D68C1627BF5B0054488C /* QuartzCore.framework in Frameworks */,
 				1A31BA7E1627A81F0001C8BA /* MapKit.framework in Frameworks */,
 				1A31BA7C1627A8040001C8BA /* libQuickDialog.a in Frameworks */,
@@ -379,9 +401,10 @@
 		1AA16B711615D08F00BA3148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A52D68B1627BF5B0054488C /* QuartzCore.framework */,
+				1AB3B42D1631315F00911A11 /* libxml2.2.dylib */,
 				1A31BA6B1627A7B00001C8BA /* libsqlite3.0.dylib */,
 				1AA16C3C1615D91A00BA3148 /* libz.dylib */,
+				1A52D68B1627BF5B0054488C /* QuartzCore.framework */,
 				1A31BA7D1627A81F0001C8BA /* MapKit.framework */,
 				1ABCF1251626DFE400B8C8C5 /* Twitter.framework */,
 				1ABCF1231626DFC900B8C8C5 /* CoreLocation.framework */,
@@ -431,6 +454,7 @@
 				1AA16B7A1615D08F00BA3148 /* OceanHolic-Info.plist */,
 				1AA16B7B1615D08F00BA3148 /* InfoPlist.strings */,
 				1A61B6251615DF6900134571 /* icon.png */,
+				1AB3B42F163131DA00911A11 /* Default-568h@2x.png */,
 				1AA16B7E1615D08F00BA3148 /* main.m */,
 				1AA16B801615D08F00BA3148 /* OceanHolic-Prefix.pch */,
 			);
@@ -477,6 +501,7 @@
 				1A31BA5B1627A6620001C8BA /* fmdb */,
 				1A52D6811627BEC10054488C /* SVProgressHUD */,
 				1A52D6851627BEC10054488C /* SVPullToRefresh */,
+				1AB3B49C1631409000911A11 /* KissXML */,
 			);
 			name = Submodules;
 			sourceTree = "<group>";
@@ -489,6 +514,50 @@
 			);
 			name = Reachability;
 			path = Submodules/Reachability;
+			sourceTree = "<group>";
+		};
+		1AB3B49C1631409000911A11 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				1AB3B49D1631409000911A11 /* Additions */,
+				1AB3B4A01631409000911A11 /* Categories */,
+				1AB3B4A31631409000911A11 /* DDXML.h */,
+				1AB3B4A41631409000911A11 /* DDXMLDocument.h */,
+				1AB3B4A51631409000911A11 /* DDXMLDocument.m */,
+				1AB3B4A61631409000911A11 /* DDXMLElement.h */,
+				1AB3B4A71631409000911A11 /* DDXMLElement.m */,
+				1AB3B4A81631409000911A11 /* DDXMLNode.h */,
+				1AB3B4A91631409000911A11 /* DDXMLNode.m */,
+				1AB3B4AA1631409000911A11 /* Private */,
+			);
+			name = KissXML;
+			path = Submodules/KissXML;
+			sourceTree = "<group>";
+		};
+		1AB3B49D1631409000911A11 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				1AB3B49E1631409000911A11 /* DDXMLElementAdditions.h */,
+				1AB3B49F1631409000911A11 /* DDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		1AB3B4A01631409000911A11 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1AB3B4A11631409000911A11 /* NSString+DDXML.h */,
+				1AB3B4A21631409000911A11 /* NSString+DDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		1AB3B4AA1631409000911A11 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				1AB3B4AB1631409000911A11 /* DDXMLPrivate.h */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		1ABCF0F51626DDE400B8C8C5 /* Products */ = {
@@ -655,6 +724,7 @@
 				1A52D6D71627FE250054488C /* main.png in Resources */,
 				1A62EEFE1628054700585912 /* pattern.png in Resources */,
 				1A4588F7162D26B3009C2866 /* ReservationDetailViewController.xib in Resources */,
+				1AB3B430163131DA00911A11 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +762,11 @@
 				1A52D68F1627E66F0054488C /* LoginViewController.m in Sources */,
 				1A52D6BA1627EE410054488C /* QuickRootBuilder.m in Sources */,
 				1A4588F6162D26B3009C2866 /* ReservationDetailViewController.m in Sources */,
+				1AB3B4AC1631409000911A11 /* DDXMLElementAdditions.m in Sources */,
+				1AB3B4AD1631409000911A11 /* NSString+DDXML.m in Sources */,
+				1AB3B4AE1631409000911A11 /* DDXMLDocument.m in Sources */,
+				1AB3B4AF1631409000911A11 /* DDXMLElement.m in Sources */,
+				1AB3B4B01631409000911A11 /* DDXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +824,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "OceanHolic/Submodules/**";
 			};
@@ -770,8 +847,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "OceanHolic/Submodules/**";
 				VALIDATE_PRODUCT = YES;
@@ -784,7 +863,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OceanHolic/OceanHolic-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "OceanHolic/OceanHolic-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -802,7 +881,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OceanHolic/OceanHolic-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "OceanHolic/OceanHolic-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",

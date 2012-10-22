@@ -8,8 +8,9 @@
 
 #import "OHServerManager.h"
 #import "ASIHTTPRequest.h"
-#import "TBXML.h"
 #import "SVProgressHUD.h"
+#import "DDXML.h"
+#import "TBXML.h"
 
 #define OHServerURL     @"http://www.oceanholic.com"
 
@@ -18,6 +19,9 @@
 
 - (void)parseReservationItems:(NSString *)htmlString withContainer:(NSMutableArray *)items;
 - (void)parseReservationDetail:(NSString *)htmlString withContainer:(NSMutableDictionary *)itemDict;
+
+- (NSString *)stringPickFromHTML:(NSString *)sourceString startString:(NSString *)sString endString:(NSString *)eString addonLength:(NSInteger)addon;
+- (NSString *)stringPickFromHTML:(NSString *)sourceString startString:(NSString *)sString endString:(NSString *)eString;
 
 @end
 
@@ -70,14 +74,13 @@ static BOOL _isLogin;
     NSRange range2 = [htmlString rangeOfString:@"</tbody>"];
     NSRange tbodyRange = NSMakeRange(range1.location, range2.location + range2.length - range1.location);
     NSString *tbodyString = [htmlString substringWithRange:tbodyRange];
-
     NSData *tbodyData = [tbodyString dataUsingEncoding:NSUTF8StringEncoding];
-    TBXML *tbodyXml = [TBXML newTBXMLWithXMLData:tbodyData error:nil];
     
-    if (tbodyXml.rootXMLElement)
+    DDXMLDocument *tbodyDoc = [[DDXMLDocument alloc] initWithData:tbodyData options:0 error:nil];
+    if (tbodyDoc)
     {
-        TBXMLElement *trElmt = [TBXML childElementNamed:@"tr" parentElement:tbodyXml.rootXMLElement];
-        if (trElmt)
+        NSArray *trElements = [tbodyDoc nodesForXPath:@"/tbody/tr" error:nil];
+        if ([trElements count])
         {
             // add notice group
             NSMutableDictionary *noticeDict = [[NSMutableDictionary alloc] init];
@@ -92,70 +95,170 @@ static BOOL _isLogin;
             NSMutableArray *reservItems = [[NSMutableArray alloc] init];
             [reservDict setValue:reservItems forKey:@"items"];
             [items addObject:reservDict];
-            
-            NSMutableArray *targetArray = nil;
-            
-            do
+
+            for (int i = 0; i < [trElements count]; i++)
             {
-                NSString *trClass = [TBXML valueOfAttributeNamed:@"class" forElement:trElmt];
-                BOOL isNotice = (1 < [[trClass componentsSeparatedByString:@" "] count]);
+                DDXMLElement *trElement = [trElements objectAtIndex:i];
+
+                NSMutableArray *targetArray = nil;
+                NSString *className = [[trElement attributeForName:@"class"] stringValue];
+                BOOL isNotice = [[className substringToIndex:6] isEqualToString:@"notice"];
                 if (isNotice)
                     targetArray = [[items objectAtIndex:0] valueForKey:@"items"];
                 else
                     targetArray = [[items lastObject] valueForKey:@"items"];
                 
                 NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
-
-                TBXMLElement *tdElmt = [TBXML childElementNamed:@"td" parentElement:trElmt];
-                if (tdElmt)
+                
+                NSArray *link = [trElement nodesForXPath:@"./td[@class='title']/a" error:nil];
+                if ([link count])
                 {
-                    do
-                    {
-                        
-                        NSString *classVal = [TBXML valueOfAttributeNamed:@"class" forElement:tdElmt];
-                        if ([classVal isEqualToString:@"nick_name"])
-                        {
-                            TBXMLElement *divElmt = [TBXML childElementNamed:@"div" parentElement:tdElmt];
-                            if (divElmt) [itemDict setValue:[TBXML textForElement:divElmt] forKey:@"nickName"];
-                        }
-                        else if ([classVal isEqualToString:@"regdate"])
-                        {
-                            [itemDict setValue:[TBXML textForElement:tdElmt] forKey:@"regDate"];
-                        }
-                        else if ([classVal isEqualToString:@"title"])
-                        {
-                            TBXMLElement *aElmt = [TBXML childElementNamed:@"a" parentElement:tdElmt];
-                            if (aElmt)
-                            {
-                                NSString *uriString = [[TBXML valueOfAttributeNamed:@"href" forElement:aElmt] stringByReplacingOccurrencesOfString:@"amp;" withString:@""];
-                                [itemDict setValue:uriString forKey:@"uri"];
-                                
-                                TBXMLElement *spanElmt = [TBXML childElementNamed:@"span" parentElement:aElmt];
-                                if (spanElmt)
-                                    [itemDict setValue:[TBXML textForElement:spanElmt] forKey:@"title"];
-                                else
-                                    [itemDict setValue:[TBXML textForElement:aElmt] forKey:@"title"];
-                                
-                            }
-                        }
-                    } while ((tdElmt = [TBXML nextSiblingNamed:@"td" searchFromElement:tdElmt]));
+                    DDXMLElement *uriElmt = [link objectAtIndex:0];
+                    [itemDict setValue:[[uriElmt attributeForName:@"href"] stringValue] forKey:@"uri"];
                 }
-            
-                NSLog(@"item title: %@", [itemDict valueForKey:@"title"]);
+                
+                NSArray *title = [trElement nodesForXPath:@"./td[@class='title']/a" error:nil];
+                if ([title count])
+                    [itemDict setValue:[[title objectAtIndex:0] stringValue] forKey:@"title"];
+                
+                NSArray *nickname = [trElement nodesForXPath:@"./td[@class='nick_name']" error:nil];
+                if ([nickname count])
+                    [itemDict setValue:[[nickname objectAtIndex:0] stringValue] forKey:@"nickName"];
+                
+                NSArray *readcount = [trElement nodesForXPath:@"./td[@class='readed_count']" error:nil];
+                if ([readcount count])
+                    [itemDict setValue:[NSNumber numberWithInt:[[[readcount objectAtIndex:0] stringValue] intValue]] forKey:@"count"];
+                
+                NSArray *regdate = [trElement nodesForXPath:@"./td[@class='regdate']" error:nil];
+                if ([regdate count])
+                    [itemDict setValue:[[regdate objectAtIndex:0] stringValue] forKey:@"regDate"];
+                
                 [targetArray addObject:itemDict];
-            } while ((trElmt = [TBXML nextSiblingNamed:@"tr" searchFromElement:trElmt]));
-
+            }
         }
     }
+}
+
+- (NSString *)stringPickFromHTML:(NSString *)sourceString startString:(NSString *)sString endString:(NSString *)eString
+{
+    return [self stringPickFromHTML:sourceString startString:sString endString:eString addonLength:0];
+}
+
+- (NSString *)stringPickFromHTML:(NSString *)sourceString startString:(NSString *)sString endString:(NSString *)eString addonLength:(NSInteger)addon
+{
+    if (nil == sourceString || nil == sString || nil == eString) return nil;
+    
+    NSRange range1 = [sourceString rangeOfString:sString];
+    NSRange range2 = [sourceString rangeOfString:eString];
+    NSRange contentRange = NSMakeRange(range1.location, range2.location - range1.location + addon);
+    NSString *contentString = [sourceString substringWithRange:contentRange];
+    return contentString;
 }
 
 - (void)parseReservationDetail:(NSString *)htmlString withContainer:(NSMutableDictionary *)itemDict
 {
     if (nil == htmlString || nil == itemDict) return;
     
-    NSRange range1 = [htmlString rangeOfString:@"<tbody>"];
-    NSRange range2 = [htmlString rangeOfString:@"</tbody>"];
+    NSString *originalContentHTML = [self stringPickFromHTML:htmlString
+                                                 startString:@"<div class=\"originalContent\">"
+                                                   endString:@"<div class=\"contentButton\">"];
+    originalContentHTML = [originalContentHTML stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
+    
+    NSData *originalContentData = [originalContentHTML dataUsingEncoding:NSUTF8StringEncoding];
+    DDXMLDocument *originalContentDoc = [[DDXMLDocument alloc] initWithData:originalContentData options:0 error:nil];
+    if (originalContentDoc)
+    {
+        NSArray *titles = [originalContentDoc nodesForXPath:@"/div/div[@class='readHeader']/div[@class='titleAndUser']/div[@class='title']" error:nil];
+        if ([titles count])
+            [itemDict setValue:[[titles objectAtIndex:0] stringValue] forKey:@"title"];
+        
+        NSArray *userinfos = [originalContentDoc nodesForXPath:@"/div/div[@class='readHeader']/div[@class='titleAndUser']/div[@class='userInfo']" error:nil];
+        if ([userinfos count])
+            [itemDict setValue:[[userinfos objectAtIndex:0] stringValue] forKey:@"author"];
+        
+        NSArray *readcounts = [originalContentDoc nodesForXPath:@"/div/div[@class='readHeader']/div[@class='dateAndCount']/div[@class='readedCount']" error:nil];
+        if ([readcounts count])
+        {
+            NSString *countVal = [[[readcounts objectAtIndex:0] stringValue] stringByReplacingOccurrencesOfString:@"조회 수 : " withString:@""];
+            [itemDict setValue:[NSNumber numberWithInt:[countVal intValue]] forKey:@"count"];
+        }
+        
+        NSArray *dates = [originalContentDoc nodesForXPath:@"/div/div[@class='readHeader']/div[@class='dateAndCount']/div[@class='date']" error:nil];
+        if ([dates count])
+            [itemDict setValue:[[dates objectAtIndex:0] stringValue] forKey:@"regDate"];
 
+        NSArray *pElements = [originalContentDoc nodesForXPath:@"/div/div/div[@class='contentBody']/div/p" error:nil];
+        if (0 == [pElements count])
+        {
+            pElements = [originalContentDoc nodesForXPath:@"/div/div/div[@class='contentBody']/div/div" error:nil];
+        }
+        
+        if ([pElements count])
+        {
+            NSMutableString *content = [[NSMutableString alloc] init];
+            for (int i = 0; i < [pElements count]; i++)
+            {
+                DDXMLElement *pElement = [pElements objectAtIndex:i];
+                if ([[[pElement attributeForName:@"class"] stringValue] isEqualToString:@"document_popup_menu"])
+                    break;
+                [content appendFormat:@"%@\n", pElement.stringValue];
+            }
+            [itemDict setValue:content forKey:@"content"];
+//            NSLog(@"contentBody: %@", [content stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+        }
+    }
+    
+    NSString *repliesHTML = [self stringPickFromHTML:htmlString
+                                                 startString:@"<div class=\"replyBox\">"
+                                                   endString:@"<a name=\"comment_form\"></a>"];
+    repliesHTML = [repliesHTML stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
+    NSData *repliesData = [repliesHTML dataUsingEncoding:NSUTF8StringEncoding];
+    DDXMLDocument *repliesDoc = [[DDXMLDocument alloc] initWithData:repliesData options:0 error:nil];
+    if (repliesDoc)
+    {
+        NSArray *replyElmts = [repliesDoc nodesForXPath:@"/div/div[@class!='clear']" error:nil];
+        if ([replyElmts count])
+        {
+            NSMutableArray *replies = [[NSMutableArray alloc] init];
+            for (int i = 0; i < [replyElmts count]; i++)
+            {
+                NSMutableDictionary *replyDict = [[NSMutableDictionary alloc] init];
+                DDXMLElement *replyElmt = [replyElmts objectAtIndex:i];
+                
+                NSArray *dateArray = [replyElmt nodesForXPath:@"./div[@class='date']" error:nil];
+                if ([dateArray count]) [replyDict setValue:[[dateArray objectAtIndex:0] stringValue] forKey:@"date"];
+                
+                NSArray *authorArray = [replyElmt nodesForXPath:@"./div[@class='author']" error:nil];
+                if ([authorArray count]) [replyDict setValue:[[authorArray objectAtIndex:0] stringValue] forKey:@"author"];
+                
+                NSArray *imageArray = [replyElmt nodesForXPath:@"./div/div/div/div/div/img" error:nil];
+                if ([imageArray count])
+                {
+                    NSString *imageUrl = [[[imageArray objectAtIndex:0] attributeForName:@"src"] stringValue];
+                    [replyDict setValue:imageUrl forKey:@"profileUrl"];
+                }
+                
+                NSArray *pArray = [replyElmt nodesForXPath:@"./div/div/div/p" error:nil];
+                if (0 == [pArray count])
+                    pArray = [replyElmt nodesForXPath:@"./div/div/div/div" error:nil];
+                
+                if ([pArray count])
+                {
+                    NSMutableString *content = [[NSMutableString alloc] init];
+                    for (int i = 0; i < [pArray count]; i++)
+                    {
+                        DDXMLElement *pElmt = [pArray objectAtIndex:i];
+                        
+                        if ([[[pElmt attributeForName:@"class"] stringValue] isEqualToString:@"comment_popup_menu"]) break;
+                        [content appendFormat:@"%@\n", [pElmt stringValue]];
+                    }
+                    [replyDict setValue:content forKey:@"content"];
+                }
+                [replies addObject:replyDict];
+            }
+            [itemDict setValue:replies forKey:@"replies"];
+        }
+    }
 }
 
 
@@ -240,7 +343,7 @@ static BOOL _isLogin;
     [SVProgressHUD dismiss];
     
     NSString *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
-    NSLog(@"responseString: %@\n", responseString);
+//    NSLog(@"responseString: %@\n", responseString);
 //    NSLog(@"request headers: %@\n", request.requestHeaders);
 //    NSLog(@"response headers: %@\n", request.responseHeaders);
     

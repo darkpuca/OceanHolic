@@ -59,7 +59,18 @@
 
         if (0 == errorCode)
         {
-            [_resultView setText:[NSString stringWithFormat:@"%@", [resultDict valueForKey:@"detail"]]];
+            NSDictionary *detailDict = [resultDict valueForKey:@"detail"];
+            
+            NSMutableString *testString = [[NSMutableString alloc] initWithString:[detailDict valueForKey:@"content"]];
+            
+            NSArray *replies = [detailDict valueForKey:@"replies"];
+            for (int i = 0; i < [replies count]; i++)
+            {
+                NSDictionary *replyDict = [replies objectAtIndex:i];
+                [testString appendFormat:@"\n\n%@", [replyDict valueForKey:@"content"]];
+            }
+            
+            [_resultView setText:testString];
         }
     }
 }
