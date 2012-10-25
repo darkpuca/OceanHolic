@@ -14,6 +14,11 @@ enum OHServerRequestType
     kRequestLogin,
     kRequestReservationItems,
     kRequestReservationDetail,
+    kRequestReservationRegist,
+    kRequestReservationModify,
+    kRequestReservationDelete,
+    
+    kRequestCount
 };
 
 
@@ -57,6 +62,9 @@ enum OHServerRequestType
 - (void)login:(NSDictionary *)params;
 - (void)reservationItems;
 - (void)reservationDetail:(NSString *)uriString;
+- (void)reservationRegist:(NSDictionary *)params;
+- (void)reservationModify:(NSDictionary *)params;
+- (void)reservationDelete:(NSInteger)contentId;
 
 
 

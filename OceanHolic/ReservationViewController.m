@@ -9,6 +9,8 @@
 #import "ReservationViewController.h"
 #import "SVPullToRefresh.h"
 #import "ReservationDetailViewController.h"
+#import "QuickRootBuilder.h"
+#import "NewReservationViewController.h"
 
 
 //#import <SDWebImage/UIImageView+WebCache.h>
@@ -140,7 +142,9 @@
 
 - (void)composeButtonPressed:(id)sender
 {
-    
+    QRootElement *root = [QuickRootBuilder createNewReservationRoot];
+    NewReservationViewController *viewController = [[NewReservationViewController alloc] initWithRoot:root];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

@@ -62,4 +62,39 @@
     return root;
 }
 
+
++ (QRootElement *)createNewReservationRoot
+{
+    QRootElement *root = [[QRootElement alloc] init];
+    root.grouped = YES;
+    root.title = @"글쓰기";
+    
+    QSection *titleSection = [[QSection alloc] initWithTitle:@"Title"];
+    QEntryElement *titleElmt = [[QEntryElement alloc] initWithTitle:nil Value:nil Placeholder:@"제목 입력"];
+    titleElmt.key = @"title";
+    [titleSection addElement:titleElmt];
+    
+    QSection *contentSection = [[QSection alloc] initWithTitle:@"Content"];
+    QTextElement *contentElmt = [[QTextElement alloc] init];
+    contentElmt.key = @"content";
+    contentElmt.font = [UIFont systemFontOfSize:12.0f];
+    QButtonElement *writeElmt = [[QButtonElement alloc] initWithTitle:@"글쓰기"];
+    writeElmt.controllerAction = @"writePressed:";
+    [contentSection addElement:contentElmt];
+    [contentSection addElement:writeElmt];
+    
+    QSection *buttonSection = [[QSection alloc] init];
+    QButtonElement *registElmt = [[QButtonElement alloc] initWithTitle:@"Registraton"];
+    registElmt.key = @"regist";
+    registElmt.controllerAction = @"registPressed:";
+    [buttonSection addElement:registElmt];
+    
+    [root addSection:titleSection];
+    [root addSection:contentSection];
+    [root addSection:buttonSection];
+
+    return root;
+}
+
+
 @end

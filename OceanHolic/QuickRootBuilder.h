@@ -12,5 +12,6 @@
 @interface QuickRootBuilder : NSObject
 
 + (QRootElement *)createLoginRoot;
++ (QRootElement *)createNewReservationRoot;
 
 @end

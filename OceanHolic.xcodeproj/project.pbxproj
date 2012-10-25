@@ -17,6 +17,7 @@
 		1A31BA7E1627A81F0001C8BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A31BA7D1627A81F0001C8BA /* MapKit.framework */; };
 		1A31BA821627AD140001C8BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A31BA801627AD140001C8BA /* MainViewController.m */; };
 		1A31BA831627AD140001C8BA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A31BA811627AD140001C8BA /* MainViewController.xib */; };
+		1A3933A316390E8000E38A54 /* NewReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3933A216390E8000E38A54 /* NewReservationViewController.m */; };
 		1A4588F6162D26B3009C2866 /* ReservationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */; };
 		1A4588F7162D26B3009C2866 /* ReservationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */; };
 		1A52D6881627BEC10054488C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A52D6821627BEC10054488C /* SVProgressHUD.bundle */; };
@@ -175,6 +176,8 @@
 		1A31BA7F1627AD140001C8BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		1A31BA801627AD140001C8BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		1A31BA811627AD140001C8BA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1A3933A116390E8000E38A54 /* NewReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReservationViewController.h; sourceTree = "<group>"; };
+		1A3933A216390E8000E38A54 /* NewReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReservationViewController.m; sourceTree = "<group>"; };
 		1A4588F3162D26B3009C2866 /* ReservationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationDetailViewController.h; sourceTree = "<group>"; };
 		1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationDetailViewController.m; sourceTree = "<group>"; };
 		1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationDetailViewController.xib; sourceTree = "<group>"; };
@@ -240,7 +243,7 @@
 		1AA16C3E1615D96A00BA3148 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1AA16C401615D98900BA3148 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1AB3B42D1631315F00911A11 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		1AB3B42F163131DA00911A11 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		1AB3B42F163131DA00911A11 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1AB3B49E1631409000911A11 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
 		1AB3B49F1631409000911A11 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
 		1AB3B4A11631409000911A11 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
@@ -318,6 +321,22 @@
 				1A31BA791627A7F40001C8BA /* libQuickDialog.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1A3933A016390B4000E38A54 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				1AA16B9D1615D18100BA3148 /* ReservationViewController.h */,
+				1AA16B9E1615D18100BA3148 /* ReservationViewController.m */,
+				1A3933A116390E8000E38A54 /* NewReservationViewController.h */,
+				1A3933A216390E8000E38A54 /* NewReservationViewController.m */,
+				1A4588F3162D26B3009C2866 /* ReservationDetailViewController.h */,
+				1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */,
+				1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */,
+				1A52D68D1627E66F0054488C /* LoginViewController.h */,
+				1A52D68E1627E66F0054488C /* LoginViewController.m */,
+			);
+			name = Reservation;
 			sourceTree = "<group>";
 		};
 		1A52D6811627BEC10054488C /* SVProgressHUD */ = {
@@ -435,13 +454,7 @@
 				1A31BA7F1627AD140001C8BA /* MainViewController.h */,
 				1A31BA801627AD140001C8BA /* MainViewController.m */,
 				1A31BA811627AD140001C8BA /* MainViewController.xib */,
-				1AA16B9D1615D18100BA3148 /* ReservationViewController.h */,
-				1AA16B9E1615D18100BA3148 /* ReservationViewController.m */,
-				1A4588F3162D26B3009C2866 /* ReservationDetailViewController.h */,
-				1A4588F4162D26B3009C2866 /* ReservationDetailViewController.m */,
-				1A4588F5162D26B3009C2866 /* ReservationDetailViewController.xib */,
-				1A52D68D1627E66F0054488C /* LoginViewController.h */,
-				1A52D68E1627E66F0054488C /* LoginViewController.m */,
+				1A3933A016390B4000E38A54 /* Reservation */,
 				1AA16B791615D08F00BA3148 /* Supporting Files */,
 			);
 			path = OceanHolic;
@@ -767,6 +780,7 @@
 				1AB3B4AE1631409000911A11 /* DDXMLDocument.m in Sources */,
 				1AB3B4AF1631409000911A11 /* DDXMLElement.m in Sources */,
 				1AB3B4B01631409000911A11 /* DDXMLNode.m in Sources */,
+				1A3933A316390E8000E38A54 /* NewReservationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

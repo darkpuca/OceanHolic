@@ -73,7 +73,7 @@ static BOOL _isLogin;
     NSRange range1 = [htmlString rangeOfString:@"<tbody>"];
     NSRange range2 = [htmlString rangeOfString:@"</tbody>"];
     NSRange tbodyRange = NSMakeRange(range1.location, range2.location + range2.length - range1.location);
-    NSString *tbodyString = [htmlString substringWithRange:tbodyRange];
+    NSString *tbodyString = [[htmlString substringWithRange:tbodyRange] stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
     NSData *tbodyData = [tbodyString dataUsingEncoding:NSUTF8StringEncoding];
     
     DDXMLDocument *tbodyDoc = [[DDXMLDocument alloc] initWithData:tbodyData options:0 error:nil];
@@ -336,6 +336,88 @@ static BOOL _isLogin;
 
 
 
+
+- (void)reservationRegist:(NSDictionary *)params
+{
+    /*
+     <?xml version="1.0" encoding="utf-8" ?>
+     <methodCall>
+         <params>
+             <_filter><![CDATA[insert]]></_filter>
+             <mid><![CDATA[sub41]]></mid>
+             <title><![CDATA[글쓰기 테스트중입니다. 삭제 예정]]></title>
+             <reward_point><![CDATA[0]]>/reward_point>
+             <is_secret><![CDATA[Y]]></is_secret>
+             <allow_comment><![CDATA[Y]]></allow_comment>
+             <allow_trackback><![CDATA[Y]]></allow_trackback>
+             <content>
+                <![CDATA[<p>내용없습니다.</p>]]>
+                 <![CDATA[<p>내용없습니다.</p>]]>
+                 <![CDATA[<p>내용없습니다.</p>]]>
+             </content>
+             <editor_sequence_srl><![CDATA[1]]></editor_sequence_srl>
+             <module><![CDATA[bodex]]></module>
+             <act><![CDATA[procBoardInsertDocument]]></act>
+         </params>
+     </methodCall>
+     */
+    
+    _requestType = kRequestReservationRegist;
+    
+    NSMutableString *xmlString = [[NSMutableString alloc] init];
+	[xmlString appendString:@"<?xml version='1.0' encoding='UTF-8'?>\n"];
+	[xmlString appendString:@"<methodCall>\n"];
+	[xmlString appendString:@"<params>\n"];
+	[xmlString appendString:@"<_filter><![CDATA[insert]]></_filter>\n"];
+	[xmlString appendString:@"<mid><![CDATA[sub41]]></mid>\n"];
+	[xmlString appendFormat:@"<title><![CDATA[%@]]></title>\n", [params valueForKey:@"title"]];
+	[xmlString appendString:@"<reward_point><![CDATA[0]]>/reward_point>\n"];
+	[xmlString appendString:@"<is_secret><![CDATA[Y]]></is_secret>\n"];
+	[xmlString appendString:@"<allow_comment><![CDATA[Y]]></allow_comment>\n"];
+	[xmlString appendString:@"<allow_trackback><![CDATA[Y]]></allow_trackback>\n"];
+	[xmlString appendString:@"<content>\n"];
+    NSArray *contents = [[params valueForKey:@"content"] componentsSeparatedByString:@"\n"];
+    for (int i = 0; i < [contents count]; i++)
+        [xmlString appendFormat:@"<![CDATA[<p>%@</p>]]\n", [contents objectAtIndex:i]];
+	[xmlString appendString:@"</content>\n"];
+	[xmlString appendString:@"<editor_sequence_srl><![CDATA[1]]></editor_sequence_srl>\n"];
+	[xmlString appendString:@"<module><![CDATA[bodex]]></module>\n"];
+	[xmlString appendString:@"<act><![CDATA[procBoardInsertDocument]]></act>\n"];
+	[xmlString appendString:@"</params>\n"];
+	[xmlString appendString:@"</methodCall>\n"];
+	NSLog(@"%@", xmlString);
+    
+    _loggedInUser = [NSString stringWithString:[params valueForKey:@"userId"]];
+    
+    [self request:@"home/index.php" method:@"POST" withBody:xmlString];
+
+    
+}
+
+- (void)reservationModify:(NSDictionary *)params
+{
+    
+}
+
+- (void)reservationDelete:(NSInteger)contentId
+{
+    /*
+     <?xml version="1.0" encoding="utf-8" ?>
+     <methodCall>
+         <params>
+         <_filter><![CDATA[delete_document]]></_filter>
+         <mid><![CDATA[sub41]]></mid>
+         <document_srl><![CDATA[83950]]></document_srl>
+         <module><![CDATA[bodex]]></module>
+         <act><![CDATA[procBoardDeleteDocument]]></act>
+         </params>
+     </methodCall>
+     */
+    
+}
+
+
+
 #pragma mark - ASIHTTPRequestDelegate methods
 
 - (void)requestFinished:(ASIHTTPRequest *)request
@@ -343,10 +425,7 @@ static BOOL _isLogin;
     [SVProgressHUD dismiss];
     
     NSString *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
-//    NSLog(@"responseString: %@\n", responseString);
-//    NSLog(@"request headers: %@\n", request.requestHeaders);
-//    NSLog(@"response headers: %@\n", request.responseHeaders);
-    
+
     NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] init];
 
     if (kRequestReservationItems == _requestType)
@@ -363,6 +442,8 @@ static BOOL _isLogin;
     }
     else
     {
+        NSLog(@"responseString: %@\n", responseString);
+
         NSError *xmlError;
         NSData *xmlData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
         TBXML *responseXML = [TBXML newTBXMLWithXMLData:xmlData error:&xmlError];
