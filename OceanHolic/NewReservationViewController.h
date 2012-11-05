@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuickDialog/QuickDialog.h>
 #import "OHServerManager.h"
 
-@interface NewReservationViewController : QuickDialogController <OHServerManagerDelegate>
+@interface NewReservationViewController : UIViewController <OHServerManagerDelegate>
+
 
 @end

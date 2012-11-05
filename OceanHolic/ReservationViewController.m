@@ -142,9 +142,9 @@
 
 - (void)composeButtonPressed:(id)sender
 {
-    QRootElement *root = [QuickRootBuilder createNewReservationRoot];
-    NewReservationViewController *viewController = [[NewReservationViewController alloc] initWithRoot:root];
-    [self.navigationController pushViewController:viewController animated:YES];
+    NewReservationViewController *viewController = [[NewReservationViewController alloc] initWithNibName:@"NewReservationViewController" bundle:nil];
+    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self.navigationController presentModalViewController:naviController animated:YES];
 }
 
 
